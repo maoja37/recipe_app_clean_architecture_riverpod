@@ -1,1 +1,109 @@
-
+{
+    "@@locale": "en",
+    "appTitle": "Recipe Finder",
+    "@appTitle": {
+        "description": "The title of the application"
+    },
+    "searchRecipes": "Search recipes...",
+    "@searchRecipes": {
+        "description": "Hint text for the recipe search input"
+    },
+    "searchForDeliciousRecipes": "Search for delicious recipes",
+    "@searchForDeliciousRecipes": {
+        "description": "Text shown when no search has been performed"
+    },
+    "searchingRecipes": "Searching recipes...",
+    "@searchingRecipes": {
+        "description": "Loading text while searching"
+    },
+    "noRecipesFound": "No recipes found",
+    "@noRecipesFound": {
+        "description": "Message shown when search returns no results"
+    },
+    "tryDifferentKeywords": "Try different keywords",
+    "@tryDifferentKeywords": {
+        "description": "Suggestion when no recipes are found"
+    },
+    "somethingWentWrong": "Something went wrong",
+    "@somethingWentWrong": {
+        "description": "Generic error message"
+    },
+    "noInternetConnection": "No internet connection",
+    "@noInternetConnection": {
+        "description": "Error message for network issues"
+    },
+    "tryAgain": "Try Again",
+    "@tryAgain": {
+        "description": "Button text to retry an action"
+    },
+    "clear": "Clear",
+    "@clear": {
+        "description": "Button text to clear search"
+    },
+    "category": "Category",
+    "@category": {
+        "description": "Label for recipe category"
+    },
+    "origin": "Origin",
+    "@origin": {
+        "description": "Label for recipe origin/area"
+    },
+    "tags": "Tags",
+    "@tags": {
+        "description": "Label for recipe tags"
+    },
+    "ingredients": "Ingredients",
+    "@ingredients": {
+        "description": "Section title for ingredients list"
+    },
+    "instructions": "Instructions",
+    "@instructions": {
+        "description": "Section title for cooking instructions"
+    },
+    "links": "Links",
+    "@links": {
+        "description": "Section title for external links"
+    },
+    "watchOnYoutube": "Watch on YouTube",
+    "@watchOnYoutube": {
+        "description": "Button text for YouTube video link"
+    },
+    "viewSource": "View Source",
+    "@viewSource": {
+        "description": "Button text for source website link"
+    },
+    "foundRecipes": "{count, plural, =0{No recipes found} =1{Found 1 recipe} other{Found {count} recipes}}",
+    "@foundRecipes": {
+        "description": "Message showing number of recipes found",
+        "placeholders": {
+            "count": {
+                "type": "int",
+                "example": "5"
+            }
+        }
+    },
+    "ingredientWithMeasure": "{measure} {ingredient}",
+    "@ingredientWithMeasure": {
+        "description": "Format for ingredient with measurement",
+        "placeholders": {
+            "measure": {
+                "type": "String",
+                "example": "1 cup"
+            },
+            "ingredient": {
+                "type": "String",
+                "example": "flour"
+            }
+        }
+    },
+    "recipeFrom": "Recipe from {area}",
+    "@recipeFrom": {
+        "description": "Shows the origin area of a recipe",
+        "placeholders": {
+            "area": {
+                "type": "String",
+                "example": "Italian"
+            }
+        }
+    }
+}
