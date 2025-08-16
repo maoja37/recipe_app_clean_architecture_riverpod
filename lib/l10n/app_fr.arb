@@ -21,5 +21,9 @@
   "foundRecipes": "{count, plural, =0{Aucune recette trouvée} =1{1 recette trouvée} other{{count} recettes trouvées}}",
   "ingredientWithMeasure": "{measure} {ingredient}",
   "recipeFrom": "Recette de {area}",
-  "originFrom": "Origine {area}"
+  "originFrom": "Origine {area}",
+    "settings": "Paramètres",
+  "language": "Langue",
+  "selectLanguage": "Sélectionner la Langue",
+  "cancel": "Annuler"
 }

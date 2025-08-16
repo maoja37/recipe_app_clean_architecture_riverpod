@@ -115,5 +115,21 @@
                 "example": "Italian"
             }
         }
+    },
+    "settings": "Settings",
+    "@settings": {
+        "description": "Settings page title"
+    },
+    "language": "Language",
+    "@language": {
+        "description": "Language setting label"
+    },
+    "selectLanguage": "Select Language",
+    "@selectLanguage": {
+        "description": "Language selection dialog title"
+    },
+    "cancel": "Cancel",
+    "@cancel": {
+        "description": "Cancel button text"
     }
 }

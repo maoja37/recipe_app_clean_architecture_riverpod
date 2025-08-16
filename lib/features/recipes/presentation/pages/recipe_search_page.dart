@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:recipe_huto_test/core/constants/size.dart';
+import 'package:recipe_huto_test/features/recipes/presentation/pages/settings_page.dart';
 import 'package:recipe_huto_test/features/recipes/presentation/providers/recipe_providers.dart';
 import 'package:recipe_huto_test/features/recipes/presentation/widgets/error_widget.dart';
 import 'package:recipe_huto_test/features/recipes/presentation/widgets/loading_widget.dart';
@@ -21,6 +22,20 @@ class RecipeSearchPage extends ConsumerWidget {
       appBar: AppBar(
         title: Text(l10n.appTitle),
         backgroundColor: Theme.of(context).colorScheme.primaryContainer,
+        actions: [
+          // LanguageSelector(),
+          IconButton(
+            icon: const Icon(Icons.settings),
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const SettingsPage(),
+                ),
+              );
+            },
+          ),
+        ],
       ),
       body: Column(
         children: [
