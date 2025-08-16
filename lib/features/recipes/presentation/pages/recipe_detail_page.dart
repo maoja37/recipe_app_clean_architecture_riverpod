@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:recipe_huto_test/core/constants/size.dart';
 import 'package:recipe_huto_test/features/recipes/domain/entities/recipe_entity.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class RecipeDetailPage extends StatelessWidget {
   final RecipeEntity recipe;
@@ -37,15 +38,14 @@ class RecipeDetailPage extends StatelessWidget {
               background: CachedNetworkImage(
                 imageUrl: recipe.strMealThumb ?? '',
                 fit: BoxFit.cover,
-                errorWidget:
-                    (context, url, error) => Container(
-                      color: Colors.grey[300],
-                      child: const Icon(
-                        Icons.restaurant,
-                        size: 100,
-                        color: Colors.grey,
-                      ),
-                    ),
+                errorWidget: (context, url, error) => Container(
+                  color: Colors.grey[300],
+                  child: const Icon(
+                    Icons.restaurant,
+                    size: 100,
+                    color: Colors.grey,
+                  ),
+                ),
               ),
             ),
           ),
@@ -76,6 +76,7 @@ class BuildInfoSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
     return Card(
       child: Padding(
         padding: const EdgeInsets.all(16),
@@ -83,16 +84,16 @@ class BuildInfoSection extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             if (recipe.strCategory != null) ...[
-              BuildInfoRow(label: 'Category', value: recipe.strCategory!),
+              BuildInfoRow(label: l10n.category, value: recipe.strCategory!),
               const VerticalSpacing(8),
             ],
             if (recipe.strArea != null) ...[
-              BuildInfoRow(label: 'Origin', value: recipe.strArea!),
+              BuildInfoRow(label: l10n.origin, value: recipe.strArea!),
               const VerticalSpacing(8),
             ],
             if (recipe.strTags != null && recipe.strTags!.isNotEmpty) ...[
               Text(
-                'Tags',
+                l10n.tags,
                 style: Theme.of(
                   context,
                 ).textTheme.titleMedium?.copyWith(fontWeight: FontWeight.bold),
@@ -100,17 +101,15 @@ class BuildInfoSection extends StatelessWidget {
               const VerticalSpacing(4),
               Wrap(
                 spacing: 8,
-                children:
-                    recipe.strTags!
-                        .split(',')
-                        .map(
-                          (tag) => Chip(
-                            label: Text(tag.trim()),
-                            materialTapTargetSize:
-                                MaterialTapTargetSize.shrinkWrap,
-                          ),
-                        )
-                        .toList(),
+                children: recipe.strTags!
+                    .split(',')
+                    .map(
+                      (tag) => Chip(
+                        label: Text(tag.trim()),
+                        materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                      ),
+                    )
+                    .toList(),
               ),
             ],
           ],
@@ -153,6 +152,7 @@ class BuildIngredientsSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
     return Card(
       child: Padding(
         padding: const EdgeInsets.all(16),
@@ -160,7 +160,7 @@ class BuildIngredientsSection extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              'Ingredients',
+              l10n.ingredients,
               style: Theme.of(
                 context,
               ).textTheme.titleLarge?.copyWith(fontWeight: FontWeight.bold),
@@ -204,6 +204,7 @@ class BuildInstructionsSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
     if (recipe.strInstructions == null || recipe.strInstructions!.isEmpty) {
       return const SizedBox.shrink();
     }
@@ -215,7 +216,7 @@ class BuildInstructionsSection extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              'Instructions',
+              l10n.instructions,
               style: Theme.of(
                 context,
               ).textTheme.titleLarge?.copyWith(fontWeight: FontWeight.bold),
@@ -238,6 +239,7 @@ class BuildLinksSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
     final hasYoutube =
         recipe.strYoutube != null && recipe.strYoutube!.isNotEmpty;
     final hasSource = recipe.strSource != null && recipe.strSource!.isNotEmpty;
@@ -253,7 +255,7 @@ class BuildLinksSection extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              'Links',
+              l10n.links,
               style: Theme.of(
                 context,
               ).textTheme.titleLarge?.copyWith(fontWeight: FontWeight.bold),
@@ -265,7 +267,7 @@ class BuildLinksSection extends StatelessWidget {
                 child: ElevatedButton.icon(
                   onPressed: () => _launchUrl(recipe.strYoutube!),
                   icon: const Icon(Icons.play_arrow),
-                  label: const Text('Watch on YouTube'),
+                  label: Text(l10n.watchOnYoutube),
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.red,
                     foregroundColor: Colors.white,
@@ -280,7 +282,7 @@ class BuildLinksSection extends StatelessWidget {
                 child: OutlinedButton.icon(
                   onPressed: () => _launchUrl(recipe.strSource!),
                   icon: const Icon(Icons.link),
-                  label: const Text('View Source'),
+                  label: Text(l10n.viewSource),
                 ),
               ),
           ],

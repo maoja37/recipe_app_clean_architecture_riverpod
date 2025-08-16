@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:recipe_huto_test/core/constants/size.dart';
 import 'package:recipe_huto_test/features/recipes/domain/entities/recipe_entity.dart';
 import 'package:recipe_huto_test/features/recipes/presentation/pages/recipe_detail_page.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class RecipeCard extends StatelessWidget {
   final RecipeEntity recipe;
@@ -11,6 +12,7 @@ class RecipeCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
     return Card(
       margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
       child: InkWell(
@@ -35,20 +37,18 @@ class RecipeCard extends StatelessWidget {
                 height: 200,
                 width: double.infinity,
                 fit: BoxFit.cover,
-                placeholder:
-                    (context, url) =>
-                        const Center(child: CircularProgressIndicator()),
+                placeholder: (context, url) =>
+                    const Center(child: CircularProgressIndicator()),
                 //fallback widget in case image fails to load
-                errorWidget:
-                    (context, url, error) => Container(
-                      height: 200,
-                      color: Colors.grey[300],
-                      child: const Icon(
-                        Icons.restaurant,
-                        size: 50,
-                        color: Colors.grey,
-                      ),
-                    ),
+                errorWidget: (context, url, error) => Container(
+                  height: 200,
+                  color: Colors.grey[300],
+                  child: const Icon(
+                    Icons.restaurant,
+                    size: 50,
+                    color: Colors.grey,
+                  ),
+                ),
               ),
             ),
             //recipe information section
@@ -72,12 +72,12 @@ class RecipeCard extends StatelessWidget {
                       label: Text(recipe.strCategory!),
                       materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
                     ),
-                    //conditional origin area display
+                  //conditional origin area display
                   if (recipe.strArea != null)
                     Padding(
                       padding: const EdgeInsets.only(top: 4),
                       child: Text(
-                        'Origin: ${recipe.strArea}',
+                        l10n.originFrom(recipe.strArea ?? ""),
                         style: Theme.of(context).textTheme.bodyMedium,
                       ),
                     ),

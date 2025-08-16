@@ -20,5 +20,6 @@
   "viewSource": "Voir la Source",
   "foundRecipes": "{count, plural, =0{Aucune recette trouvée} =1{1 recette trouvée} other{{count} recettes trouvées}}",
   "ingredientWithMeasure": "{measure} {ingredient}",
-  "recipeFrom": "Recette de {area}"
+  "recipeFrom": "Recette de {area}",
+  "originFrom": "Origine {area}"
 }

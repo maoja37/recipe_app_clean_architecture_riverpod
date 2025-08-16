@@ -1,13 +1,12 @@
-
 import 'package:flutter/material.dart';
 import 'package:recipe_huto_test/core/constants/size.dart';
 import 'package:recipe_huto_test/core/errors/failures.dart';
-
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class CustomErrorWidget extends StatelessWidget {
   final Failure failure;
-    // Optional callback for retry functionality
-    // its also worth noting that VoidCallback is just a typedef for void Function()
+  // Optional callback for retry functionality
+  // its also worth noting that VoidCallback is just a typedef for void Function()
   final VoidCallback? onRetry;
 
   const CustomErrorWidget({
@@ -18,15 +17,16 @@ class CustomErrorWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
     String message;
-    
+
     //conditional statements to detemine the rror message to show to the user
     if (failure is ServerFailure) {
       message = (failure as ServerFailure).message;
     } else if (failure is NetworkFailure) {
-      message = 'No internet connection';
+      message = l10n.noInternetConnection;
     } else {
-      message = 'Something went wrong';
+      message = l10n.somethingWentWrong;
     }
 
     return Center(
@@ -51,7 +51,7 @@ class CustomErrorWidget extends StatelessWidget {
               const VerticalSpacing(16),
               ElevatedButton(
                 onPressed: onRetry,
-                child: const Text('Try Again'),
+                child: Text(l10n.tryAgain),
               ),
             ],
           ],

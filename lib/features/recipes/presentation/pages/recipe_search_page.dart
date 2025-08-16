@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:recipe_huto_test/core/constants/size.dart';
 import 'package:recipe_huto_test/features/recipes/presentation/providers/recipe_providers.dart';
@@ -12,18 +13,19 @@ class RecipeSearchPage extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final l10n = AppLocalizations.of(context);
     // Watch the search state for changes
     final searchState = ref.watch(searchNotifierProvider);
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Recipe Finder'),
+        title: Text(l10n.appTitle),
         backgroundColor: Theme.of(context).colorScheme.primaryContainer,
       ),
       body: Column(
         children: [
           const RecipeSearchBar(),
-       // Expanded widget to fill remaining space with search results or error/loading widgets
+          // Expanded widget to fill remaining space with search results or error/loading widgets
           Expanded(child: _buildBody(context, searchState, ref)),
         ],
       ),
@@ -47,14 +49,14 @@ class RecipeSearchPage extends ConsumerWidget {
     }
     // Show 'No recipes found" message when search returns empty results
     if (state.recipes.isEmpty && state.query.isNotEmpty) {
-      return const Center(
+      return Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Icon(Icons.search_off, size: 64, color: Colors.grey),
             VerticalSpacing(16),
             Text(
-              'No recipes found',
+              AppLocalizations.of(context).foundRecipes(0),
               style: TextStyle(fontSize: 18, color: Colors.grey),
             ),
           ],
@@ -64,14 +66,14 @@ class RecipeSearchPage extends ConsumerWidget {
 
     // Show initial state message when no search has been performed
     if (state.recipes.isEmpty) {
-      return const Center(
+      return Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Icon(Icons.restaurant_menu, size: 64, color: Colors.grey),
             VerticalSpacing(16),
             Text(
-              'Search for delicious recipes',
+              AppLocalizations.of(context).searchForDeliciousRecipes,
               style: TextStyle(fontSize: 18, color: Colors.grey),
             ),
           ],

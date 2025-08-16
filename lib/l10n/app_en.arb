@@ -105,5 +105,15 @@
                 "example": "Italian"
             }
         }
+    },
+    "originFrom": "Origin {area}",
+    "@originFrom": {
+        "description": "Label for recipe origin with area",
+        "placeholders": {
+            "area": {
+                "type": "String",
+                "example": "Italian"
+            }
+        }
     }
 }

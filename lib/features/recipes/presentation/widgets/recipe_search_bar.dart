@@ -3,8 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:recipe_huto_test/features/recipes/presentation/providers/recipe_providers.dart';
-
-
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class RecipeSearchBar extends ConsumerStatefulWidget {
   const RecipeSearchBar({super.key});
@@ -15,7 +14,7 @@ class RecipeSearchBar extends ConsumerStatefulWidget {
 
 class _RecipeSearchBarState extends ConsumerState<RecipeSearchBar> {
   final TextEditingController _searchController = TextEditingController();
-    // timer for implementing debounce functionality to limit API calls
+  // timer for implementing debounce functionality to limit API calls
   Timer? _debounce;
 
   @override
@@ -42,12 +41,13 @@ class _RecipeSearchBarState extends ConsumerState<RecipeSearchBar> {
 
   @override
   Widget build(BuildContext context) {
+   final l10n = AppLocalizations.of(context);
     return Padding(
       padding: const EdgeInsets.all(16.0),
       child: TextField(
         controller: _searchController,
         decoration: InputDecoration(
-          hintText: 'Search recipes...',
+          hintText: l10n.searchRecipes,
           prefixIcon: const Icon(Icons.search),
           //clear button to clear the search field, for better UX sha
           suffixIcon: IconButton(
