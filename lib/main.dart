@@ -1,8 +1,8 @@
 // lib/main.dart
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:recipe_huto_test/features/recipes/presentation/providers/locale_provider.dart';
+import 'package:recipe_huto_test/l10n/app_localizations.dart';
 
 import 'features/recipes/presentation/pages/recipe_search_page.dart';
 

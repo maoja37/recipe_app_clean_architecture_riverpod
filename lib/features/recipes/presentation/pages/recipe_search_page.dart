@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:recipe_huto_test/core/constants/size.dart';
 import 'package:recipe_huto_test/features/recipes/presentation/pages/settings_page.dart';
@@ -8,6 +7,7 @@ import 'package:recipe_huto_test/features/recipes/presentation/widgets/error_wid
 import 'package:recipe_huto_test/features/recipes/presentation/widgets/loading_widget.dart';
 import 'package:recipe_huto_test/features/recipes/presentation/widgets/recipe_card.dart';
 import 'package:recipe_huto_test/features/recipes/presentation/widgets/recipe_search_bar.dart';
+import 'package:recipe_huto_test/l10n/app_localizations.dart';
 
 class RecipeSearchPage extends ConsumerWidget {
   const RecipeSearchPage({super.key});

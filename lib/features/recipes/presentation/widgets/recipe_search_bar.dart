@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:recipe_huto_test/features/recipes/presentation/providers/recipe_providers.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:recipe_huto_test/l10n/app_localizations.dart';
 
 class RecipeSearchBar extends ConsumerStatefulWidget {
   const RecipeSearchBar({super.key});

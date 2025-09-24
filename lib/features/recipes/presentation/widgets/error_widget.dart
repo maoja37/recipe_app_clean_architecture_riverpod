@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:recipe_huto_test/core/constants/size.dart';
 import 'package:recipe_huto_test/core/errors/failures.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:recipe_huto_test/l10n/app_localizations.dart';
 
 class CustomErrorWidget extends StatelessWidget {
   final Failure failure;

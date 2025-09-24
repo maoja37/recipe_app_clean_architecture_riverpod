@@ -3,7 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:recipe_huto_test/core/constants/size.dart';
 import 'package:recipe_huto_test/features/recipes/domain/entities/recipe_entity.dart';
 import 'package:recipe_huto_test/features/recipes/presentation/pages/recipe_detail_page.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
+import 'package:recipe_huto_test/l10n/app_localizations.dart';
 
 class RecipeCard extends StatelessWidget {
   final RecipeEntity recipe;
